@@ -1,7 +1,8 @@
 import React from "react";
 
 function Card(props) {
-  console.log("card props: ", props);
+  console.log("Card props: ", props);
+  //destructuring props
   return (
     <div className="card">
       <div className="card-body">

@@ -6,11 +6,12 @@ import TextEditor from "./components/TextEditor";
 import SavedText from "./components/SavedText";
 import "./App.css";
 
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
   return (
     <Router>
+      {/* Switch */}
       <Header />
       <Route exact path="/" component={TextEditor} />
       <Route exact path="/saved-text" component={SavedText} />

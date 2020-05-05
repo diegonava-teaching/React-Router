@@ -5,6 +5,7 @@ class AllPost extends React.Component {
   state = {
     posts: [],
   };
+
   getPost = () => {
     fetch("https://jsonplaceholder.typicode.com/posts")
       .then((response) => response.json())
@@ -28,6 +29,11 @@ class AllPost extends React.Component {
   };
 
   render() {
+    console.log("All posts props: ", this.props);
+    console.log("All posts state: ", this.state);
+
+    //pagination
+
     return (
       <div class="container">
         <div class="row">
