@@ -4,26 +4,28 @@ import Card from "./Card";
 class AllPost extends React.Component {
   state = {
     posts: [],
-  }
+  };
   getPost = () => {
-    fetch('https://jsonplaceholder.typicode.com/posts')
-      .then(response => response.json())
-      .then(json => this.setState({
-        posts: json,
-      }));
+    fetch("https://jsonplaceholder.typicode.com/posts")
+      .then((response) => response.json())
+      .then((json) =>
+        this.setState({
+          posts: json,
+        })
+      );
   };
 
   handleRenderPost = () => {
-    const { posts } = this.state
+    const { posts } = this.state;
 
-    if(!posts.length) return
+    if (!posts.length) return;
 
-    const listOfPosts = posts.map(
-      item => <Card id={item.id} title={item.title} body={item.body} />
-    )
+    const listOfPosts = posts.map((item) => (
+      <Card id={item.id} title={item.title} body={item.body} />
+    ));
 
-    return listOfPosts
-  }
+    return listOfPosts;
+  };
 
   render() {
     return (
@@ -35,7 +37,7 @@ class AllPost extends React.Component {
             </button>
           </div>
           <div class="col-md-9">
-            <h3>This is my list of post</h3>
+            <h3>List of posts</h3>
             {this.handleRenderPost()}
           </div>
         </div>
@@ -43,6 +45,5 @@ class AllPost extends React.Component {
     );
   }
 }
-
 
 export default AllPost;
