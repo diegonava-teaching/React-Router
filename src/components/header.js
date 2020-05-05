@@ -1,12 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { withRouter } from "react-router";
 
-function Header() {
+function Header(props) {
+  console.log("Header props: ", props);
   return (
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="navcompbar-brand">Navegacion</div>
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <div className="navcompbar-brand">NAV-BAR</div>
       <button
-        class="navbar-toggler"
+        className="navbar-toggler"
         type="button"
         data-toggle="collapse"
         data-target="#navbarNav"
@@ -14,29 +16,29 @@ function Header() {
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span class="navbar-toggler-icon"></span>
+        <span className="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <Link class="nav-link" to="/">
+      <div className="collapse navbar-collapse" id="navbarNav">
+        <ul className="navbar-nav">
+          <li className="nav-item active">
+            <Link className="nav-link" to="/">
               Text Editor
             </Link>
           </li>
-          <li class="nav-item">
-            <Link class="nav-link" to="/Allpost">
+          <li className="nav-item">
+            <Link className="nav-link" to="/all-posts">
               All Posts
             </Link>
           </li>
-          {/* <li class="nav-item">
-            <Link class="nav-link" to="/Single">
-              Post 2
+          <li className="nav-item">
+            <Link className="nav-link" to="/single-post">
+              Single Post
             </Link>
-          </li> */}
+          </li>
         </ul>
       </div>
     </nav>
   );
 }
 
-export default Header;
+export default withRouter(Header);

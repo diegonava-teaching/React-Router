@@ -1,9 +1,8 @@
 import React from "react";
 
-function Single() {
-  return (
-    <p>Post sencillo</p>
-  );
+function SinglePost(props) {
+  console.log("SinglePostPost props: ", props);
+  return <p>Post sencillo</p>;
 }
 
-export default Single;
+export default SinglePost;

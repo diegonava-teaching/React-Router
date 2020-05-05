@@ -1,10 +1,10 @@
 import React from "react";
-import Header from "./components/header";
-import Allposts from "./components/allPosts";
-import Single from "./components/singlePost";
-import TextEditor from "./components/text-editor";
+import Header from "./components/Header";
+import Allposts from "./components/AllPosts";
+import SinglePost from "./components/SinglePost";
+import TextEditor from "./components/TextEditor";
+import SavedText from "./components/SavedText";
 import "./App.css";
-
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
@@ -13,8 +13,9 @@ function App() {
     <Router>
       <Header />
       <Route exact path="/" component={TextEditor} />
-      <Route path="/Allpost" component={Allposts} />
-      <Route exact path="/Single" component={Single} />
+      <Route exact path="/saved-text" component={SavedText} />
+      <Route path="/all-posts" component={Allposts} />
+      <Route exact path="/single-post" component={SinglePost} />
     </Router>
   );
 }

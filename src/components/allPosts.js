@@ -1,10 +1,9 @@
 import React from "react";
-import Tarjeta from "./tarjeta";
-
+import Card from "./Card";
 
 class AllPost extends React.Component {
   state = {
-    posts: null,
+    posts: [],
   }
   getPost = () => {
     fetch('https://jsonplaceholder.typicode.com/posts')
@@ -16,9 +15,17 @@ class AllPost extends React.Component {
 
   handleRenderPost = () => {
     const { posts } = this.state
+
+    if(!posts.length) return
+
+    const listOfPosts = posts.map(
+      item => <Card id={item.id} title={item.title} body={item.body} />
+    )
+
+    return listOfPosts
   }
 
-  render() { 
+  render() {
     return (
       <div class="container">
         <div class="row">
@@ -29,7 +36,7 @@ class AllPost extends React.Component {
           </div>
           <div class="col-md-9">
             <h3>This is my list of post</h3>
-            <p>{this.state.posts && this.state.posts.map(item => <Tarjeta id={item.id} title={item.title} body={item.body} />)}</p>
+            {this.handleRenderPost()}
           </div>
         </div>
       </div>
