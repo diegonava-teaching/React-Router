@@ -14,20 +14,9 @@ class AllPost extends React.Component {
           posts: json,
         })
       );
-    // fetch("https://todo-checkpoint-api.herokuapp.com/api/todos/diego", {
-    //   method: "GET",
-    //   body: {
-    //     title: 'This is my title',
-    //     checked: false
-    //   },
-    // })
-    //   .then((response) => response.json())
-    //   .then((json) =>
-    //     console.log(" esto es lo que regresa la api de todos: ", json)
-    //   );
   };
 
-  handleRenderPost = () => {
+  handleRenderPosts = () => {
     const { posts } = this.state;
 
     if (!posts.length) return;
@@ -55,7 +44,7 @@ class AllPost extends React.Component {
           </div>
           <div class="col-md-9">
             <h3>List of posts</h3>
-            {this.handleRenderPost()}
+            {this.handleRenderPosts()}
           </div>
         </div>
       </div>
