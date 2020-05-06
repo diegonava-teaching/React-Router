@@ -7,13 +7,13 @@ class AllPost extends React.Component {
   };
 
   getPosts = () => {
-    // fetch("https://jsonplaceholder.typicode.com/posts", { method: "POST" })
-    //   .then((response) => response.json())
-    //   .then((json) =>
-    //     this.setState({
-    //       posts: json,
-    //     })
-    //   );
+    fetch("https://jsonplaceholder.typicode.com/posts", { method: "GET" })
+      .then((response) => response.json())
+      .then((json) =>
+        this.setState({
+          posts: json,
+        })
+      );
     // fetch("https://todo-checkpoint-api.herokuapp.com/api/todos/diego", {
     //   method: "GET",
     //   body: {
