@@ -1,9 +1,8 @@
 import React from "react";
 
 function SavedText(props) {
-  // destructuring
-  console.log("SavedTextPost props: ", props);
-  return <p>Saved Text</p>;
+  const { state } = props.location;
+  return <p>{state}</p>;
 }
 
 export default SavedText;

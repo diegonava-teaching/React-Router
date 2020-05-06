@@ -6,14 +6,25 @@ class AllPost extends React.Component {
     posts: [],
   };
 
-  getPost = () => {
-    fetch("https://jsonplaceholder.typicode.com/posts")
-      .then((response) => response.json())
-      .then((json) =>
-        this.setState({
-          posts: json,
-        })
-      );
+  getPosts = () => {
+    // fetch("https://jsonplaceholder.typicode.com/posts", { method: "POST" })
+    //   .then((response) => response.json())
+    //   .then((json) =>
+    //     this.setState({
+    //       posts: json,
+    //     })
+    //   );
+    // fetch("https://todo-checkpoint-api.herokuapp.com/api/todos/diego", {
+    //   method: "GET",
+    //   body: {
+    //     title: 'This is my title',
+    //     checked: false
+    //   },
+    // })
+    //   .then((response) => response.json())
+    //   .then((json) =>
+    //     console.log(" esto es lo que regresa la api de todos: ", json)
+    //   );
   };
 
   handleRenderPost = () => {
@@ -38,7 +49,7 @@ class AllPost extends React.Component {
       <div class="container">
         <div class="row">
           <div class="col-md-3 border-right">
-            <button type="button" onClick={this.getPost} class="btn btn-dark">
+            <button type="button" onClick={this.getPosts} class="btn btn-dark">
               Click to get all posts
             </button>
           </div>

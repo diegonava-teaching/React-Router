@@ -7,6 +7,12 @@ class TextEditor extends React.Component {
 
   inputHandler = (e) => this.setState({ text: e.target.value });
 
+  handleSaveText = () => {
+    const { push } = this.props.history;
+    const { text } = this.state;
+    push("/saved-text", text);
+  };
+
   render() {
     console.log("textEditor state: ", this.state);
     console.log("textEditor props: ", this.props);
@@ -42,7 +48,7 @@ class TextEditor extends React.Component {
 
         <br />
 
-        {/* <button onClick={this.handleSaveText}>Send Text</button> */}
+        <button onClick={this.handleSaveText}>Send Text</button>
       </div>
     );
   }
